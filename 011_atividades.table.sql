@@ -19,6 +19,9 @@ CREATE TABLE public.atividades (
 	dados_originais jsonb NULL,
 	rd_station_id varchar(255) NULL,
 	canal_id uuid NULL,
+	done_date timestamptz NULL,
+	external_created_at timestamptz NULL,
+	deal_external_id varchar NULL,
 	CONSTRAINT atividades_pipedrive_id_key UNIQUE (pipedrive_id),
 	CONSTRAINT atividades_pkey PRIMARY KEY (id),
 	CONSTRAINT atividades_rd_station_id_key UNIQUE (rd_station_id)

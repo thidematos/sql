@@ -33,6 +33,9 @@ CREATE TABLE public.oportunidades (
 	external_funil_id varchar NULL,
 	qualificacao int4 NULL,
 	prediction_date date NULL,
+	custom_fields json NULL,
+	external_products_id varchar NULL,
+	organizacao_external_id varchar NULL,
 	CONSTRAINT oportunidades_pkey PRIMARY KEY (id),
 	CONSTRAINT oportunidades_rd_station_id_key UNIQUE (external_id)
 );
