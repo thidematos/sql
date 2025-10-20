@@ -12,6 +12,7 @@ CREATE TABLE public.produtos (
 	base_price varchar NULL,
 	created_at timestamptz DEFAULT now() NULL,
 	updated_at timestamptz DEFAULT now() NULL,
-	CONSTRAINT produtos_pkey PRIMARY KEY (id),
-	CONSTRAINT produtos_external_id_key UNIQUE (external_id)
+	categoria varchar NULL,
+	CONSTRAINT produtos_external_id_key UNIQUE (external_id),
+	CONSTRAINT produtos_pkey PRIMARY KEY (id)
 );

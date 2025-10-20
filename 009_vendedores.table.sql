@@ -14,6 +14,7 @@ CREATE TABLE public.vendedores (
 	ativo bool DEFAULT true NULL,
 	created_at timestamptz DEFAULT now() NOT NULL,
 	updated_at timestamptz DEFAULT now() NOT NULL,
+	created_at_external timestamptz NULL,
 	CONSTRAINT vendedores_pipedrive_id_key UNIQUE (pipedrive_id),
 	CONSTRAINT vendedores_pkey PRIMARY KEY (id),
 	CONSTRAINT vendedores_rd_station_id_key UNIQUE (rd_station_id)
