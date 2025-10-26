@@ -6,15 +6,15 @@
 
 CREATE TABLE public.campanhas (
 	id uuid DEFAULT gen_random_uuid() NOT NULL,
-	empresa_id uuid NOT NULL,
-	canal_id uuid NOT NULL,
+	empresa_id uuid NULL,
+	canal_id uuid NULL,
 	id_externo varchar(255) NOT NULL,
 	nome varchar(255) NOT NULL,
 	status varchar(50) NULL,
 	dados_originais jsonb NULL,
 	created_at timestamptz DEFAULT now() NOT NULL,
 	updated_at timestamptz DEFAULT now() NOT NULL,
-	CONSTRAINT campanhas_empresa_id_canal_id_id_externo_key UNIQUE (empresa_id, canal_id, id_externo),
+	CONSTRAINT campanhas_id_externo_unique UNIQUE (id_externo),
 	CONSTRAINT campanhas_pkey PRIMARY KEY (id)
 );
 

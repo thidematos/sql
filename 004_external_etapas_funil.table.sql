@@ -12,5 +12,6 @@ CREATE TABLE public.external_etapas_funil (
 	ordem int4 NULL,
 	created_at timestamptz DEFAULT now() NULL,
 	updated_at timestamptz DEFAULT now() NULL,
+	canal_id uuid NULL,
 	CONSTRAINT external_etapas_funil_external_id_key UNIQUE (external_id)
 );

@@ -11,6 +11,7 @@ CREATE TABLE public.funis (
 	updated_at timestamptz DEFAULT now() NULL,
 	"order" int4 NULL,
 	external_id varchar NULL,
-	CONSTRAINT funis_pkey PRIMARY KEY (id),
-	CONSTRAINT funis_external_id_key UNIQUE (external_id)
+	canal_id uuid NULL,
+	CONSTRAINT funis_external_id_key UNIQUE (external_id),
+	CONSTRAINT funis_pkey PRIMARY KEY (id)
 );
