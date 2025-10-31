@@ -64,15 +64,12 @@ CREATE TABLE public.oportunidades (
 	organizacao_external_id varchar NULL,
 	loss_reason_id uuid NULL,
 	contato_external_id varchar NULL,
+	custom_fields jsonb NULL,
 	CONSTRAINT oportunidades_pkey PRIMARY KEY (id),
 	CONSTRAINT oportunidades_rd_station_id_key UNIQUE (external_id)
 );
-CREATE INDEX idx_oportunidades_funil_id ON public.oportunidades USING btree (funil_id);
 
 
 -- public.oportunidades foreign keys
 
-ALTER TABLE public.oportunidades ADD CONSTRAINT oportunidades_canal_id_fkey FOREIGN KEY (canal_id) REFERENCES public.canais(id);
-ALTER TABLE public.oportunidades ADD CONSTRAINT oportunidades_etapa_funil_id_fkey FOREIGN KEY (etapa_funil_id) REFERENCES public.etapas_funil(id);
-ALTER TABLE public.oportunidades ADD CONSTRAINT oportunidades_funil_id_fkey FOREIGN KEY (funil_id) REFERENCES public.funis(id) ON DELETE SET NULL;
 ALTER TABLE public.oportunidades ADD CONSTRAINT oportunidades_vendedor_id_fkey FOREIGN KEY (vendedor_id) REFERENCES public.vendedores(id) ON DELETE SET NULL;
