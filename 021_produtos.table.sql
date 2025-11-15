@@ -13,6 +13,8 @@ CREATE TABLE public.produtos (
 	created_at timestamptz DEFAULT now() NULL,
 	updated_at timestamptz DEFAULT now() NULL,
 	categoria varchar NULL,
+	custom_fields jsonb NULL,
+	descricao varchar NULL,
 	CONSTRAINT produtos_external_id_key UNIQUE (external_id),
 	CONSTRAINT produtos_pkey PRIMARY KEY (id)
 );
