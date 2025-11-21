@@ -10,5 +10,6 @@ CREATE TABLE public.custom_fields (
 	"for" varchar NULL,
 	field varchar NULL,
 	created_at timestamptz DEFAULT now() NULL,
-	updated_at timestamptz DEFAULT now() NULL
+	updated_at timestamptz DEFAULT now() NULL,
+	CONSTRAINT custom_fields_for_field_key UNIQUE ("for", field)
 );
