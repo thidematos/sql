@@ -12,6 +12,7 @@ CREATE TABLE public.funis (
 	"order" int4 NULL,
 	external_id varchar NULL,
 	canal_id uuid NULL,
+	tipo varchar NULL,
 	CONSTRAINT funis_external_id_key UNIQUE (external_id),
 	CONSTRAINT funis_pkey PRIMARY KEY (id)
 );

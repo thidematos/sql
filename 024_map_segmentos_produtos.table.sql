@@ -12,5 +12,5 @@ CREATE TABLE public.map_segmentos_produtos (
 	created_at timestamptz DEFAULT now() NULL,
 	updated_at timestamptz DEFAULT now() NULL,
 	CONSTRAINT map_segmentos_produtos_pkey PRIMARY KEY (id),
-	CONSTRAINT map_segmentos_produtos_segmento_id_nome_segmento_key UNIQUE (segmento_id, nome_segmento)
+	CONSTRAINT map_segmentos_produtos_segmento_id_nome_segmento_categoria_key UNIQUE (segmento_id, nome_segmento, nome_categoria)
 );
